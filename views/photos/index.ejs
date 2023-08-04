@@ -15,13 +15,6 @@
          <td><%= p.title %></td>
          <td><%= p.desc %></td>
          <td><%= p.data %></td>
-         <td>
-            <% if (user?._id.equals(p.user)) { %>
-                <form action="/photos/<%= p._id %>?_method=DELETE" method="POST"></form>
-                    <button type="submit">X</button>
-                </form>
-            <% } %>
-          </td>
        </tr>
       <% }) %>
    </tbody>
