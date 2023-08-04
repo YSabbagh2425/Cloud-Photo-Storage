@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Storage!</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+<body>
+    <nav>
+        <a href = "/" <%- "title" === 'Home Page' ? 'class="active"' : '' %>>HOME PAGE</a>
+        <a href="/photos" <%- "title" === 'All Photos' ? 'class="active"' : '' %>>ALL PHOTOS</a>
+        <% if (user) { %>
+            <a href="/photos/new" <%- "title" === 'Add Photo' ? 'class="active"' : '' %>>ADD PHOTO</a>
+            <a href="/logout">LOG OUT</a>
+        <% } else { %>
+            <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+        <% } %>

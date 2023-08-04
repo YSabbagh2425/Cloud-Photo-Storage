@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-var app = require('../serverver');
+var app = require('../server');
 var debug = require('debug')('cloud-photo-storage:server');
 var http = require('http');
 

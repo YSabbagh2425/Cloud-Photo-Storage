@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+
+<h2>Enter a New Photo </h2>
+<form action="/photos" method="POST">
+  <label>Title:
+    <input type="text" name="title">
+  </label><br>
+  <label>Description:
+    <input type="text" name="desc">
+  </label><br>
+  <label>Data:
+    <select name="Type of Photo">
+      <option value="jpeg">jpeg</option>
+    </select>
+  </label><br>
+  <button type="submit">Add Photo</button>
+</form>
+<p><%= errorMsg %></p>
+
+<%- include('../partials/footer') %>

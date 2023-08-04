@@ -1,0 +1,38 @@
+<%- include('../partials/header') %>
+
+<table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Date</th>
+        <th>Description</th>
+        <th>Data</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% let total = 0 %>
+      <% photo.contents.forEach(function(c) { %>
+        <% total += c.desc %>
+        <tr>
+          <td class="content-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" ><%= c.userName %></td>
+          <td><%= c.createdAt.toLocaleDateString() %></td>
+          <td><%= c.content %></td>
+          <td><%= c.desc %></td>
+          <td>
+            <% if (user?._id.equals(c.user)) { %>
+                <form action="/contents/<%= c._id %>?_method=DELETE" method="POST"></form>
+                    <button type="submit">X</button>
+                </form>
+            <% } %>
+          </td>
+        </tr>
+      <% }); %>
+      <tr>
+        <td colspan="3"></td>
+        <td><strong><%= (total / photo.contents.length).toFixed(1) %></strong></td>
+      </tr>
+    </tbody>
+  </table>
+  
+
+<%- include('../partials/footer') %>
