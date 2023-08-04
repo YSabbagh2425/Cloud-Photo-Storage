@@ -28,3 +28,19 @@ a {
   border-radius: 50%;
   height: 40px;
 }
+
+nav {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+}
+
+h1 {
+  display: flex;
+  justify-content: center
+}
+
+h2 {
+  display: flex;
+  justify-content: center
+}
